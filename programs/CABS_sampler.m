@@ -324,7 +324,7 @@ for p=1:opt.nloop
     end
     
     %once batch is complete, output to .mat file
-    if(mod(p,opt.batchsize)==0 && p~=opt.nloop)
+    if(mod(p,opt.batchsize)==0)
                 
         %output data to .mat file
         out.beta((p-opt.batchsize+1):p,1) = beta_tmp;
@@ -362,8 +362,8 @@ for p=1:opt.nloop
     %increment batch index
     batch_idx = batch_idx+1;
     
-    %once reach final iteration, output remaining to .mat file
-    if p==opt.nloop         
+    %if final iteration is not multiple of batch size, output remaining to .mat file
+    if (p==opt.nloop && mod(p,opt.batchsize)~=0)         
        %output data to .mat file
         out.beta((p-mod(p,opt.batchsize)+1):p,1) = beta_tmp(1:mod(p,opt.batchsize));
         out.log_spec_hat((p-mod(p,opt.batchsize)+1):p,1) = log_spec_hat_tmp(1:mod(p,opt.batchsize));    
@@ -375,7 +375,7 @@ for p=1:opt.nloop
         out.ui((p-mod(p,opt.batchsize)+1):p,1) = ui_tmp(1:mod(p,opt.batchsize));
         out.xi((p-mod(p,opt.batchsize)+1):p,1) = xi_tmp(1:mod(p,opt.batchsize));
         if strcmp(opt.conv_diag,'on')  
-            out.conv_diag((p-mod(p,opt.batchsize)+1):p,1:nbeta+1)=conv_diag_tmp(1:mod(p,opt.batchsize));
+            out.conv_diag((p-mod(p,opt.batchsize)+1):p,1:nbeta+1)=conv_diag_tmp(1:mod(p,opt.batchsize),:);
         end          
     end
 end
