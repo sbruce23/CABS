@@ -245,6 +245,7 @@ j=1000;
 seed1=69814;
 seed2=[23785 19872 86744 7860 47845];
 out=cell(5,1);
+spec_est=cell(5,1);
 [x,u]=simdata(change,i,j,seed1);
 
 % WARNING: Steps 3b and 3c may take a very long time to run 
@@ -257,7 +258,7 @@ parfor k=1:5 %change 'parfor' to 'for' for serial computing
                                   %tracking of convergence diagnostic measures
     % 3c) Run CABS method
     tic         
-    out{k}=CABS(x,u,opt);
+    [spec_est{k}, out{k}]=CABS(x,u,opt);
     toc
 end
 % Alternatively, forego steps 3b and 3c and link to output file already created using:
