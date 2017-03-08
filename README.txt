@@ -30,6 +30,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Contents
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 <README.txt> 	File with quick start guide for demo of CABS procedure, 
 		description of folder contents, and instructions for using
 		CABS estimation procedure on other datasets.
@@ -44,16 +45,7 @@
 <programs>	Folder containing all MATLAB functions needed to run the
 		CABS procedure.  Each function is commented and contains a
 		brief description at the beginning of the file.
-
-<datasets>	Folder containing the output from the CABS procedure
-		applied to the simulated piecewise and slowly
-		varying AR processes described in the paper.  There are 8
-		MATLAB datasets for each setting since computations were 
-		run using the parallel option across 8 cores.  These datasets
-		can be used to exactly reproduce results contained in 
-		Figures 3 and 4 in the paper.  Each dataset contains the 
-		input data, MCMC settings, and results of the MCMC sampler.
-
+		
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
