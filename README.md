@@ -21,7 +21,7 @@ Larger datasets may require more RAM for processing.  Reduce batch sizes
 in MCMC settings to reduce required RAM by outputting more frequently  
 to dataset stored in ROM.    
       
-Quick start guide:
+Quick start guide:  
 Follow the steps below to simulate data, run the CABS estimation procedure,  
 and create data visualizations to assess the convergence and fit of the   
 method to simulated slowly varying and piecewise AR processes detailed in   
