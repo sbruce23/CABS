@@ -64,14 +64,6 @@ opt=setMCMCOptions('nloop',5000,'seed', seed2, 'nwarmup',1000,...
 tic         
 [spec_est, out]=CABS(x,u,opt);
 toc
-%Note: To reproduce the exact results from the paper, use the following
-%code in place of step 1c:
-% out=cell(8,1);
-% for k=1:8
-%     out{k}=matfile(['C:\CABSdemo\datasets\CABSout_abrupt_',num2str(k),'.mat'],'Writable',true);
-% end
-% spec_est=CABS_estimator(out);
-% CABS_plot(out);
 
 % 1d) True log spectrum
 spec_true=zeros(51,j,i);
@@ -160,14 +152,6 @@ opt=setMCMCOptions('nloop',5000,'seed', seed2, 'nwarmup',1000,...
 tic         
 [spec_est, out]=CABS(x,u,opt);
 toc
-%Note: To reproduce the exact results from the paper, use the following
-%code in place of step 2c:
-% out=cell(8,1);
-% for k=1:8
-%     out{k}=matfile(['C:\CABSdemo\datasets\CABSout_smooth_',num2str(k),'.mat'],'Writable',true);
-% end
-% spec_est=CABS_estimator(out);
-% CABS_plot(out);
 
 % 2d) True log spectrum
 spec_true=zeros(51,j,i);
@@ -261,10 +245,6 @@ parfor k=1:5 %change 'parfor' to 'for' for serial computing
     [spec_est{k}, out{k}]=CABS(x,u,opt);
     toc
 end
-% Alternatively, forego steps 3b and 3c and link to output file already created using:
-% for k=1:5
-%     out{k} = matfile(['C:\CABSdemo\datasets\CABSout_conv_',num2str(k),'.mat'],'Writable',true);
-% end
 
 % 3d) Calculate convergence diagnostics
 C=5; %number of chains run
