@@ -10,9 +10,9 @@ Spectral Analysis of Nonstationary Biomedical Time Series"
 by Bruce, Hall, Buysse, and Krafty (2017)  
   
 Dependencies:  
-Code was developed using MATLAB 2016b, so code may not function properly  
-on older versions of MATLAB.  MATLAB 2016b or newer is recommended.  
-If choose parallel computing option (parcomp=1), the Parallel   
+Code was developed using MATLAB 2016b (version 1.0.0) and has since been updated
+to be compatible with MATLAB 2018a (version 2.0.0), so code may not function properly  
+on other versions of MATLAB.  If choose parallel computing option (parcomp=1), the Parallel   
 Computing Toolbox is required.  
   
 Code has been tested and developed for data of the following dimensions:  
