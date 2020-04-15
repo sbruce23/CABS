@@ -1,15 +1,16 @@
+# CABS
 Conditional Adaptive Bayesian Spectrum Analysis (CABS)  
 "Adaptive Bayesian Spectral Analysis of Nonstationary Biomedical Time Series"  
 by Bruce, Hall, Buysse, and Krafty (2017)  
   
 Author: Scott A. Bruce  
   
-Description:
+## Description:
 Instructions for implementing CABS estimation from "Adaptive Bayesian  
 Spectral Analysis of Nonstationary Biomedical Time Series"  
 by Bruce, Hall, Buysse, and Krafty (2017)  
   
-Dependencies:  
+## Dependencies:  
 Code was developed using MATLAB 2016b (version 1.0.0) and has since been updated
 to be compatible with MATLAB 2018a (version 2.0.0), so code may not function properly  
 on other versions of MATLAB.  If choose parallel computing option (parcomp=1), the Parallel   
@@ -21,7 +22,7 @@ Larger datasets may require more RAM for processing.  Reduce batch sizes
 in MCMC settings to reduce required RAM by outputting more frequently  
 to dataset stored in ROM.    
       
-Quick start guide:  
+## Quick start guide:  
 Follow the steps below to simulate data, run the CABS estimation procedure,  
 and create data visualizations to assess the convergence and fit of the   
 method to simulated slowly varying and piecewise AR processes detailed in   
@@ -46,22 +47,22 @@ plots of the MCMC sampler fit. There is an additional section which
 demonstrates how to obtain the convergence diagnostic measures and plots   
 used to assess convergence.  
   
-Using CABS on other data:  
+## Using CABS on other data:  
 Three inputs are necessary to run the MCMC sampler for the CABS estimation  
 procedure.  
   
-1) 'x' is a matrix whereby each column contains a realization of the time  
+1) '**x**' is a matrix whereby each column contains a realization of the time  
 series for a given subject.  The rows are indexed by time   
 (t=1,...,T) and the columns are indexed by subject (l=1,...,L).  For   
 example, {x}_11 contains the first time series instance for the first   
 subject.    
   
-2) 'u' is a vector containing the corresponding covariate values for each  
+2) '**u**' is a vector containing the corresponding covariate values for each  
 subject.  The columns are indexed by subject, which is the same as for  
 the time series matrix 'x'.  For example, {u}_1 is the covariate value  
 for the first subject.  
   
-3) 'opt' is a structure containing the options required for the MCMC   
+3) '**opt**' is a structure containing the options required for the MCMC   
 sampler to run.  See 'setMCMCOptions.m' for descriptions of all of the  
 options as well as the default values.  Once you have determined the  
 appropriate settings for your data, use this function to create the  
@@ -69,25 +70,3 @@ structure needed as in the demo file.
   
 Once you have created these three inputs based on your data, you can pass  
 them into the 'CABS' function just as in the demo file for estimation.  
-    
-MIT License  
-
-Copyright (c) 2017 Scott Alan Bruce
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.  
