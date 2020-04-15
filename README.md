@@ -28,7 +28,7 @@ and create data visualizations to assess the convergence and fit of the
 method to simulated slowly varying and piecewise AR processes detailed in   
 the paper.  
   
-1) Download the .zip file and extract the contents to a folder of your  
+1) Download all files and folders into a folder of your  
 choosing.  In what follows, we will assume the folder is saved with the   
 following path 'C:\CABSdemo'.  
   
